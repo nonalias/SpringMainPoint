@@ -1,5 +1,6 @@
 package com.hello.order;
 
+import com.hello.AppConfig;
 import com.hello.member.Grade;
 import com.hello.member.Member;
 import com.hello.member.MemberService;
@@ -9,8 +10,9 @@ import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
